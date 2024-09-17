@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
 import { useState } from 'react'
@@ -128,7 +129,12 @@ export default function Homepage() {
     )
 }
 
-function UserProfileButton({ isOpen, setIsOpen }) {
+interface UserProfileButtonProps {
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function UserProfileButton({ setIsOpen }: UserProfileButtonProps) {
     return (
         <button
             onClick={() => setIsOpen(true)}
